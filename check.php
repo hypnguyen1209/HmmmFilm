@@ -18,6 +18,7 @@ if ( strpos($REFERER, $ID) == true ) {
         'poster' => $ReponseArray['poster'],
         'logo' => $ReponseArray['logo'],
         'added_on' => $ReponseArray['date'],
+         'subtitle' => $ReponseArray['subtitle'],
         'file' => 'https://www.googleapis.com/drive/v3/files/'.$IDDrive.'?alt=media&key=<Your Drive API Key>'
     )); // Add you Drive API Key :v
    }
