@@ -7,7 +7,7 @@
     $GetTime = date('H:i:s d-m-Y', time());
     //echo '<label class="font-weight-bold">Link</label>
     //<textarea class="form-control" style="resize: none;">haaa</textarea>';
-    $PermittedChars = '0123456789abcdefwxyz';
+    $PermittedChars = '0123456789abcdefghijklmnopqrstuvwxyz';
     $RanDomKey = substr(str_shuffle($PermittedChars), 0, 5);
     $ArrayDrive = array(
         'date' => $GetTime,
@@ -16,7 +16,7 @@
         'subtitle' => $Subtitle_URL,
         'poster' => $Poster_URL
     );
-    file_put_contents($RanDomKey.'.json', json_encode($ArrayDrive));
-    
+    file_put_contents("link/".$RanDomKey.'.json', json_encode($ArrayDrive)); // Your JSON file will save in link folder :v, change it if you want
+
     echo '<label class="font-weight-bold">Link</label>
-    <textarea class="form-control" style="resize: none;">http://'.$_SERVER['SERVER_NAME'].'/media.php?id='.$RanDomKey.'</textarea>';
+    <textarea class="form-control" style="resize: none;">http://'.$_SERVER['SERVER_NAME'].'/media.php?id='.$RanDomKey.'</textarea>'; // Change http to https if you use SSL
