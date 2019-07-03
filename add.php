@@ -7,7 +7,7 @@
     $GetTime = date('H:i:s d-m-Y', time());
     //echo '<label class="font-weight-bold">Link</label>
     //<textarea class="form-control" style="resize: none;">haaa</textarea>';
-    $PermittedChars = '0123456789abcdefwxyz';
+    $PermittedChars = '0123456789abcdefghijklmnopqrstuvwxyz'; // Update permittedchars :v
     $RanDomKey = substr(str_shuffle($PermittedChars), 0, 5);
     $ArrayDrive = array(
         'date' => $GetTime,
@@ -19,4 +19,4 @@
     file_put_contents($RanDomKey.'.json', json_encode($ArrayDrive));
     
     echo '<label class="font-weight-bold">Link</label>
-    <textarea class="form-control" style="resize: none;">http://'.$_SERVER['SERVER_NAME'].'/media.php?id='.$RanDomKey.'</textarea>';
+    <textarea class="form-control" style="resize: none;">http://'.$_SERVER['SERVER_NAME'].'/media.php?id='.$RanDomKey.'</textarea>'; // Change http to https (Optional but important :v)
