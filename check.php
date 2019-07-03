@@ -5,7 +5,7 @@
     $ID = substr($ID10, 0, 5);
     $REFERER = $_SERVER['HTTP_REFERER'];
 if ( strpos($REFERER, $ID) == true ) {
-    $ReponseJSON = file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/link'.$ID.'.json'); // Load JSON file. P/s: Change http to https if you use SSL :v
+    $ReponseJSON = file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/link/'.$ID.'.json'); // Load JSON file. P/s: Change http to https if you use SSL :v
     $ReponseArray = json_decode($ReponseJSON, true);
     $URLDrive = $ReponseArray['drive_url'];
     $IDDrive = substr($URLDrive, 33, strlen($URLDrive));
